@@ -1,0 +1,220 @@
+<div class="marginTags">
+    <div class="otaUpgradeMarginDiv">
+        <div class="otaViewLink" style="display:none;">
+            <a class="otaViewLinkAnchor" href="">View Upgraded History</a>
+        </div>
+
+        <div class="selectBranchDevice">
+            <div class="row">
+                <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4">
+                    <div class="otaSelectBranchDiv">
+                        <p class="otaselectBranchStyle">Select Branch</p>
+                        <div class="newGrup dropdown-scheduler">
+                            <div class="no-padding geofencename treeview sms-Gateway">
+                                <button class="geotreeBtn btn dropdown-toggle dynamic-toggle" ng-click="toggleDropLoad();selectedNodes();"><span class="textwrapequip">{{selectedBranchText | limitTo:20}}</span> <b class="alignright caret"></b></button>
+                                <div ng-if="opened" class="ltequipments otaSelectBranchDivDrop">
+                                    <div class="">
+                                        <div class="">
+                                            <ul class="sidebar-menu fullWidth paddingValue" id="nav-accordion">
+                                                <li class="sidebar-search" style="width:15%;text-align:left;">
+                                                    <span class="cursor" ng-click="selectAll('Branches')"> All</span>
+                                                </li>
+                                                <li class="sidebar-search text-center" style="width:45%;text-align:center;">
+                                                    <span class="cursor">{{selectedBranchCount.length}}&nbsp;&nbsp;Selected</span>
+                                                </li>
+                                                <li class="sidebar-search text-right" style="width:40%;text-align:center;">
+                                                    <span class="cursor" ng-click="clearAll('Branches');">Clear All</span>
+                                                </li>
+                                            </ul>
+                                            <ul class="sidebar-menu divider fullWidth" id="nav-accordion">
+                                                <li class="sidebar-search">
+                                                    <div class="custom-search-form">
+                                                        <form>
+                                                            <input class="form-control" placeholder="Search by Branch" type="text" ng-model="searchValueBranch.value">
+                                                            <button ng-show="searchValueBranch.value.length" type="reset" value="Reset" ng-click="cancelSearch(searchValueBranch.value);" class="branchCloseSearch">X</button>
+                                                        </form>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <ul pv-scrolled="loadMoreBranches()" id="brcnchscrolldiv" class="paddingTopValue scrollbar">
+                                                <li ng-if="masterBranchList.length" ng-repeat="options in test = (masterBranchList) | filter:searchValueBranch" class="equipment-tree-list-value">
+                                                    <div class="pull-left">
+                                                        <label class="control control--checkbox" for="sltdvalue{{options.value}}">{{options.value}}&nbsp;&nbsp;
+                                                <input id="sltdvalue{{options.value}}" type="checkbox" ng-model="options.IsSelected" ng-change="countForSelectedBranches(options)">
+                                                <div class="control__indicator"></div>
+                                            </label>
+                                                    </div>
+                                                    <div class="clearboth"></div>
+                                                </li>
+                                                <li ng-if="!branchListPag.length" class="centerAlign">No Branches found</li>
+                                            </ul>
+                                        </div>
+                                        <div class="ltdone"><a href class="btn" ng-click="toggleDropLoad();selectedNodes();">Done</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3"></div>
+                <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4">
+                    <div class="otaSelectDeviceDiv">
+                        <p class="otaselectDeviceStyle">Select Equipment</p>
+                        <div class="newGrup dropdown-scheduler">
+                            <div class="no-padding geofencename treeview sms-Gateway">
+                                <button class="geotreeBtn btn dropdown-toggle dynamic-toggle" ng-click="selectedDevice();toggleDropLoadDevice();"><span class="textwrapequip">{{selectedTextForDevice | limitTo:24}}</span> <b class="alignright caret"></b></button>
+                                <div ng-if="openedDevice" class="ltequipments">
+                                    <div class="">
+                                        <div ng-if="showDeviceDatas" class="">
+                                            <ul class="sidebar-menu fullWidth paddingValue" id="nav-accordion">
+                                                <li class="sidebar-search" style="width:15%;text-align:left;">
+                                                    <span class="cursor" ng-click="selectAll('Devices')"> All</span>
+                                                </li>
+                                                <li class="sidebar-search" style="width:45%;text-align:center;">
+                                                    <span class="cursor">{{selectedDeviceCount.length}}&nbsp;&nbsp;Selected</span>
+                                                </li>
+                                                <li class="sidebar-search" style="width:40%;text-align:center;">
+                                                    <span class="cursor" ng-click="clearAll('Devices');searchDeviceValue = null;">Clear All</span>
+                                                </li>
+                                            </ul>
+                                            <ul class="sidebar-menu divider fullWidth" id="nav-accordion">
+                                                <li class="sidebar-search">
+                                                    <div class=" custom-search-form">
+                                                        <form>
+                                                            <input class="form-control" placeholder="Search by Phone#" type="text" ng-model="searchDeviceValue" ng-enter="searchDevice(searchDeviceValue)">
+                                                            <span class="searchBoxBranch" ng-click="searchDevice(searchDeviceValue)"> <i><img class="searchImgWidth" src="images/search-icon.png"></i></span>
+                                                            <button ng-show="searchDeviceValue.length" type="reset" value="Reset" ng-click="cancelDeviceSearch(searchDeviceValue);searchDeviceValue = null;" class="branchCloseSearch">X</button>
+                                                        </form>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <ul pv-scrolled="loadMoreDevices()" id="devscrolldiv" class="paddingTopValue scrollbar">
+                                                <li ng-if="deviceListPag.length" ng-repeat="options in test = (deviceListPag)" class="equipment-tree-list-value">
+                                                    <div class="pull-left">
+                                                        <label class="control control--checkbox" for="sltdvalue{{options.value}}">{{options.value}}&nbsp;&nbsp;
+                                                <input id="sltdvalue{{options.value}}" type="checkbox" ng-model="options.IsSelected" ng-change="countForSelectedDevices(options)">
+                                                <div class="control__indicator"></div>
+                                            </label>
+                                                    </div>
+                                                    <div class="clearboth"></div>
+                                                </li>
+                                                <li ng-if="!deviceListPag.length" class="centerAlign">No Devices found
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div ng-if="!showDeviceDatas" class="devicenodatafound">No Devices found for the selected Branch</div>
+                                        <div class="ltdone"><a href class="btn" ng-click="selectedDevice();showTableOta();toggleDropLoadDevice();">Done</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div focus-highlight=""></div>
+                    </div>
+                </div>
+                <div class="col-md-1 col-xs-1 col-sm-1 col-lg-1"></div>
+            </div>
+        </div>
+        <div class="row otaMiddleDiv">
+            <div class="col-md-7 col-xs-7 col-sm-7 col-lg-7 otaselectBranchStyle">Current Version Lists</div>
+            <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3">
+                <!--<div class="otaFilterDiv otaselectBranchStyle">Filter</div>
+                <div class="otaFilterDivDrop">
+                    <select class="filterTypeStyle">
+                    <option value="" disabled selected> All</option>
+                    <option>OS</option>
+                    <option>App</option>
+                    <option>Script</option>
+                    <option>VCM</option>
+                </select>
+                </div>-->
+            </div>
+
+        </div>
+        <!--ng-if="showOtaUpgradeTable" -->
+
+        <div>
+            <div class="bs-component">
+                <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2 otaSearcDivStyle">
+                    <input class="otaMiddleDivSearch" type="text" style="border: none;" ng-model="search" placeholder="Search by Equipment, Version, Branch">
+                    <img class="otaSearchDivIcon" src="images/search-icon.png">
+                </div>
+                <div class="otaTableDivStyle" ng-style="style()" resize> 
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div class="pull-left">
+                                        <label class="control control--checkbox" for="sltdvalue{{options.value}}">{{options.value}}&nbsp;&nbsp;
+                                                <input id="sltdvalue{{options.value}}" type="checkbox" ng-model="options.IsSelected"  ng-click="checkAll()">
+                                                <div class="control__indicator"></div>
+                                            </label>
+                                    </div>
+                                </th>
+                                <th ng-click="sort('Id')">Id
+                                    <span class="glyphicon sort-icon" ng-show="sortKey=='Id'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                </th>
+                                <th ng-click="sort('Equipment')">Equipment
+                                    <span class="glyphicon sort-icon" ng-show="sortKey=='Equipment'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                </th>
+                                <th ng-click="sort('Branch')">Branch
+                                    <span class="glyphicon sort-icon" ng-show="sortKey=='Branch'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                </th>
+                                <th ng-click="sort('OS')">OS
+                                    <span class="glyphicon sort-icon" ng-show="sortKey=='OS'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                </th>
+                                <th ng-click="sort('OSUP')">Os Updated Date
+                                    <span class="glyphicon sort-icon" ng-show="sortKey=='OSUP'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                </th>
+                                <th ng-click="sort('App')">App
+                                    <span class="glyphicon sort-icon" ng-show="sortKey=='App'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                </th>
+                                <th ng-click="sort('AppUP')">App Updated Date
+                                    <span class="glyphicon sort-icon" ng-show="sortKey=='AppUP'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                </th>
+                                <th ng-click="sort('VCM')">VCM
+                                    <span class="glyphicon sort-icon" ng-show="sortKey=='VCM'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                </th>
+                                <th ng-click="sort('VCMUP')">VCM Updated Date
+                                    <span class="glyphicon sort-icon" ng-show="sortKey=='VCMUP'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                </th>
+                                <th ng-click="sort('IG')">Ignition Status
+                                    <span class="glyphicon sort-icon" ng-show="sortKey=='IG'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                </th>
+                                <th ng-click="sort('LRD')">Last Reported Date
+                                    <span class="glyphicon sort-icon" ng-show="sortKey=='LRD'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr dir-paginate="user in dummyTableValues|orderBy:sortKey:reverse|filter:search|itemsPerPage:100">
+                                <td>
+                                    <div class="pull-left">
+                                        <label class="control control--checkbox" for="sltdvalue{{options.value}}">{{user.value}}&nbsp;&nbsp;
+                                                <input id="sltdvalue{{user.selected}}" type="checkbox" ng-model="user.selected" ng-change="selectSingleRowota(user)">
+                                                <div class="control__indicator"></div>
+                                            </label>
+                                    </div>
+                                </td>
+                                <td>{{user.Id}}</td>
+                                <td>{{user.Equipment}}</td>
+                                <td>{{user.Branch}}</td>
+                                <td>{{user.OS}}</td>
+                                <td>{{user.OSUP}}</td>
+                                <td>{{user.App}}</td>
+                                <td>{{user.AppUP}}</td>
+                                <td>{{user.VCM}}</td>
+                                <td>{{user.VCMUP}}</td>
+                                <td>{{user.IG}}</td>
+                                <td>{{user.LRD}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <dir-pagination-controls max-size="10" direction-links="true" boundary-links="true">
+                </dir-pagination-controls>
+
+            </div>
+        </div>
+    </div>
+
+</div>

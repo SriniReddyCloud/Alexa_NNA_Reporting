@@ -1,0 +1,44 @@
+<div class="container imageUploadWrapper">
+    <form name="uploadImageForm" novalidate>
+        <div class="row imgUploadContainer">
+            <div class="row no-gutter">
+                <div class="col-md-6">
+                <div class="fieldLabel">
+                    Select Image Type
+                </div>
+                <div>
+                    <select class="inputField" required ng-model='selectedImageType'>
+                        <option value="" disabled selected hidden>Select Image Type</option>
+                        <option ng-repeat='imgType in imageTypes' ng-value='imgType.name'>{{imgType.name}}</option>                    
+                    </select>
+                </div>            
+            </div>
+            <div class="col-md-6">
+                <div class="fieldLabel">
+                    Version
+                </div>
+                <div class="searchInputWrapper">
+                    <input type="text" placeholder="Version" class="inputField" ng-model="version" required />
+                    <button ng-click="clearVersion()" ng-show='version.length' class="">X</button>
+                </div>
+            </div>
+            </div>
+            <div class="row no-gutter">
+                <div class="col-md-12 attachFileWrapper">
+                    <span>
+                        <img src="images/file_icon.png">
+                        <a ng-click="showUpload()" class="attachFileLink">Attach File</a>
+                        <span class="uploadFileName" ng-show='uploadFile'>
+                            {{uploadFile.name}}
+                            <img src="/images/trash.png" ng-click="resetUpload()" />
+                        </span>
+                        <input type="file" accept=".bin" ng-show="false" class="uploadFile" id="uploadFile" data-bind-file="" data-ng-model="uploadFile" required>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="text-align:center">
+            <div type="button" ng-disabled="uploadImageForm.$invalid" class="btn btn-primary submitBtn" ng-click="submitUpload()">Submit</div>
+        </div>
+    </form>
+</div>

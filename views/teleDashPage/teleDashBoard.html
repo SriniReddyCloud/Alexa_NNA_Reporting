@@ -1,0 +1,64 @@
+
+<div class="teledashBody">
+    <div class="teleHeaderPart">
+        <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4 col-centered"></div>
+        <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4 telematicsHeadPartCenter">
+            <div class="logoherctop">
+                <a class="navbar-brand center-block"><img src="images/herc_logo.png" alt="Herc Logo" class="telematics-logo-inner" ng-click="logoheadernavigation()"></a>
+            </div>
+
+        </div>
+        <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4 col-centered logoutDiv">
+            <!--<p class="dropdown-toggle no-padding logoutParaTag" aria-haspopup="true" aria-expanded="false" ng-click="logout()"> <img src="css/assets/profile_icon_feedback.png" class="width25"> </p>-->
+            <div uib-dropdown on-toggle="toggled(open)" auto-close="outsideClick">
+                <p href id="simple-dropdown" uib-dropdown-toggle class="dropdown-toggle no-padding logoutParaTag">
+                    <img src="images/profile_icon_feedback.png" class="width25">
+                </p>
+                <div class="dropdown-menu logoutdropdown" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                    <div class="dropdownlogout-arrow"><img src="images/map_pop-up_aro.png" alt="maparrow"></div>
+                    <ul class="no-paddingtext">
+                        <li class="pull-left col-md-2"><img src="images/profile_icon_feedback.png" class="width25"></li>
+                        <li class="pull-right col-md-10">
+                            <p>{{user_full_name}}</p>
+                             <div class="profile_email">{{user_email}}</div>
+                        </li>
+                    </ul>
+                    <div class="clearboth"></div>
+                    <p class="text-center sign-out" ng-click="loggedOut()">Sign out</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="row teleDummyArea"> </div>-->
+    <div class="teleContentPart">
+        <div class="teleDashHeight">
+            <div class="teleContentSelectionPart">
+                <a ng-click="showSndCmd();" href="" ui-sref=".sendCommand">
+                    <div ng-class="{teleDashTabActive:isSndCmdTabActive}" class="sndCmdAnchor">
+                        <div ng-class="" class="teleDashTabHeading">Send Command</div>
+                    </div>
+                </a>
+
+                <a class="" ng-click="showOtaUpgrade()" href="" ui-sref=".otaUpgrade">
+                    <div ng-class="{teleDashTabActive:isOTATabActive}" class="sndCmdAnchor">
+                        <div ng-class="" class="teleDashTabHeading">OTA Upgrade</div>
+                    </div>
+                </a>
+                <a class="" ng-click="showImageUpload();" href="" ui-sref=".imageUpload">
+                    <div ng-class="{teleDashTabActive:isImageUploadTabActive}" class="sndCmdAnchor">
+                        <div ng-class="" class="teleDashTabHeading">Image Binary Upload</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row teleSplitPart" id='teleSplitPart'>
+        <div class="panel panel-default" ui-view>{{view}}</div>
+        <!--<div ng-controller="sendCommandCtrl" ng-include="'views/teleDashPage/sendCommand.html'"></div>-->
+    </div>
+</div>
+
+

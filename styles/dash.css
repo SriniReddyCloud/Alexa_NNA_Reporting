@@ -1,0 +1,1256 @@
+@import 'https://code.highcharts.com/css/highcharts.css';
+#container {
+    height: 400px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.input-group .form-control {
+    width: 105px !important;
+}
+
+text.highcharts-credits {
+    display: none;
+}
+
+/* Link the series colors to axis colors */
+
+.highcharts-color-0 {
+    fill: #7cb5ec;
+    stroke: #7cb5ec;
+}
+
+.highcharts-axis.highcharts-color-0 .highcharts-axis-line {
+    stroke: #7cb5ec;
+}
+
+.highcharts-axis.highcharts-color-0 text {
+    fill: #047dc4;
+    stroke: #047dc4;
+}
+
+.highcharts-color-1 {
+    fill: #c40505;
+    stroke: #c40505;
+}
+
+.highcharts-color-2 {
+    fill: #efeb0e;
+    stroke: #efeb0e;
+}
+
+.highcharts-axis.highcharts-color-1 .highcharts-axis-line {
+    stroke: #90ed7d;
+}
+
+.highcharts-axis.highcharts-color-1 text {
+    fill: #90ed7d;
+}
+
+.highcharts-yaxis .highcharts-axis-line {
+    stroke-width: 2px;
+}
+
+ul.dropdown-menu.ng-pristine.ng-untouched.ng-valid.ng-scope.ng-not-empty.ng-valid-date-disabled {
+    left: 0px !important;
+}
+
+table:focus {
+    outline: 0;
+}
+
+.wrapper {
+    margin: 0px;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+.logoDiv {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    background-color: #C61935;
+}
+
+
+
+#chartdiv {
+    margin-left: 15px;
+    width: 100%;
+    height: 350px;
+    font-size: 11px;
+}
+
+.divMarginLeft {
+    overflow-x: hidden;
+    height: 100%;
+    overflow-y: auto;
+    margin: 0px 0px 0px 0px;
+        padding: 0px;
+}
+
+.submitBtnStyle {
+    height: 30px;
+    width: 100px;
+    background-color: #eeeeee;
+    border-color: #ccc;
+}
+
+.datepick_dough {
+    float: right;
+    width: 107%;
+    height: 35px;
+    margin: 0px 0px 0px 0%;
+}
+
+.input_style {
+    height: 30px;
+}
+
+.filter_style {
+    padding: 8px 0px 0px 35px;
+}
+
+.datepick_dough_row button {
+    border-radius: 0px;
+    /*background-color: #eeeeee;*/
+}
+
+.datepick_dough_row input {
+    border-radius: 0px;
+    height: 28px;
+    width: 100px !important;
+}
+
+.datepick_row button {
+    border-radius: 0px;
+    background-color: #eeeeee;
+}
+
+.barDivCenter {
+    text-align: center;
+    font-weight: 600;
+}
+
+.datepick_row input {
+    border-radius: 0px;
+    height: 28px;
+    width: 100px !important;
+}
+
+.datepick_dough_row {
+    padding: 0px;
+    /* margin: 0;*/
+    height: 35px;
+    margin: 0px 45px 0px -52px;
+}
+
+.content {
+    height: 470px;
+    width: 100%;
+    background-color: #ffffff;
+    /*padding: 2% 5% 0% 5%;*/
+    padding: 0% 5% 0% 5%;
+    /*margin: 10px 0px 0px 0px;*/
+    /*margin: 5% 0px 0px 0px;*/
+}
+
+.selectpicker {
+    width: 100%;
+}
+
+.filterbyStyleTop {
+    margin-left: 15%;
+}
+
+.chart1-axis {
+    padding-left: 6%;
+    color: gray;
+}
+
+.chart1-colors-container {
+    width: 100%;
+    margin: 0%;
+}
+
+.chart1-colors {
+    margin-left: 30px;
+    height: 100px;
+}
+
+.chart1-blue {
+    height: 10px;
+}
+
+ul.dropdown-menu {
+    width: 100%;
+}
+
+.c1-blue {
+    background-color: #1277e2;
+    height: 100%;
+    /*width: 100%;*/
+    width: 10px;
+}
+
+.c2-blue {
+    background-color: #1277e2;
+    height: 100%;
+    /*width: 100%;*/
+    width: 10px;
+}
+
+.chart1-blue-text {
+    margin-top: -5px;
+}
+
+.chart1-red {
+    height: 10px;
+}
+
+.c1-red {
+    background-color: #de0a0a;
+    height: 100%;
+    /*width: 100%;*/
+    width: 10px;
+}
+
+.chart1-red-text {
+    margin-top: -5px;
+}
+
+.chart1-yellow {
+    height: 10px;
+}
+
+.c1-yellow {
+    background-color: #ffff00;
+    height: 100%;
+    /*width: 100%;*/
+    width: 10px;
+}
+
+.chart1-yellow-text {
+    margin-top: -5px;
+}
+
+.chart2-axis {
+    padding-left: 6%;
+    color: gray;
+}
+
+.chart2-colors-container {
+    width: 50px;
+}
+
+.chart2-colors {
+    margin-left: 30px;
+}
+
+.chart2-blue {
+    height: 10px;
+    width: 10px;
+    background-color: blue;
+    float: left;
+}
+
+.chart2-blue-text {
+    float: right;
+    margin-top: -5px;
+}
+
+.logoTopDiv {
+    margin: 0px 0px 20px 0px;
+    width: 100%;
+}
+
+.userDivMarginTag {
+    border-top: 1px solid #850222;
+    margin: 0px;
+    width: 100%;
+    height: 50px;
+}
+
+.modalCloseBtn {
+    margin-top: -33px;
+    margin-right: 5px;
+}
+
+.dashMgmtPaddingLeft {
+    padding-left: 15px;
+}
+
+.dashMgmtDivHeight {
+    height: 50px;
+}
+
+.IconDiv {
+    padding-left: 40px;
+    padding-right: 30px;
+}
+
+.userIconImg {
+    height: 36px;
+    width: 36px;
+}
+
+.userMgmtImg {
+    padding-left: 40px;
+}
+
+.dashMgmtMarginTop {
+    margin-top: 5px;
+}
+
+.dashMgmtIcon {
+    height: 24px;
+    width: 24px;
+}
+
+.dashMgmtBorder {
+    border-bottom: 2px solid #ec2147;
+    border-top: 2px solid #ec2147;
+    padding-top: 10px;
+    font-size: 13px;
+}
+
+.dashMgmtBorder1 {
+    /* border-bottom: 2px solid #ec2147; */
+    border-top: 2px solid #ec2147;
+    padding-top: 10px;
+    font-size: 13px;
+}
+
+.cursorDiv {
+    cursor: pointer;
+    margin: 0px 0px 20px 0px;
+}
+
+.cursorDiv1 {
+    cursor: pointer;
+    margin: 0px 0px 0px 0px;
+}
+
+.dash {
+    background-color: #850222;
+}
+
+
+.dash1 {
+    background-color: #c61935;
+}
+
+.logo {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.logo1 {
+    border: none;
+}
+
+.mgmt {
+    background-color: #850222;
+}
+
+.usrMgmtBorder {
+    border-bottom: 2px solid #ec2147;
+    padding-top: 10px;
+    display: none;
+}
+
+.dashMgmtPadding {
+    padding-right: 15px;
+}
+
+.userIconNameDiv {
+    margin-top: 10px;
+}
+
+.userIconName {
+    font-size: 14px;
+}
+
+.dashMnmgtTagStyle {
+    font-size: 13px;
+    width: 150px !important;
+}
+
+.dashLeftDivCW {
+    color: #ffffff;
+    text-indent: 10px;
+    line-height: 13px;
+}
+
+.userIconArrowDiv {
+    margin-top: 15px;
+    margin-left: -15px;
+}
+
+.dough-content {
+    margin: 0px;
+    width: 100%;
+}
+
+.dough-chart {
+    height: 100%;
+}
+
+.dough-index {
+    padding: 0px;
+    height: 100%;
+    /*margin-left: 0%;*/
+    margin-left: -6%;
+    width: 24%;
+}
+
+.index {
+    font-size: 13px !important;
+    height: 210px;
+    width: 180px;
+    float: right;
+    margin-top: 65px;
+    background-color: #eeeeee;
+    padding: 5px 0px 0px 0px;
+    line-height: 0px;
+}
+
+.index1 {
+    height: 20px;
+    margin: 20px 0px 0px 0px;
+    padding: 0px 0px 0px 20px;
+    color: gray;
+}
+
+.index2 {
+    height: 20px;
+    margin: 5px 0px 0px 0px;
+    padding: 0px 0px 0px 20px;
+}
+
+.index3 {
+    height: 20px;
+    margin: 20px 0px 0px 0px;
+    padding: 0px 0px 0px 20px;
+    color: gray;
+}
+
+.index3-in-txt {
+    padding: 0px 0px 0px 0px;
+}
+
+.index3-in-val {
+    text-align: right;
+    color: black;
+}
+
+.index4 {
+    height: 20px;
+    margin: 10px 0px 0px 0px;
+    padding: 0px 0px 0px 20px;
+    color: gray;
+}
+
+.index5 {
+    height: 20px;
+    margin: 10px 0px 0px 0px;
+    padding: 0px 0px 0px 20px;
+    color: gray;
+}
+
+.index6 {
+    height: 20px;
+    margin: 10px 0px 0px 0px;
+    padding: 0px 0px 0px 20px;
+    color: gray;
+}
+
+.chart-dough {
+    height: 340px;
+}
+
+.dough1-in {
+    /* height: 40px;*/
+    margin: 0px 80px 0px 0px;
+}
+
+.dough {
+    /*height: 30px;*/
+    width: 100%;
+    /*margin: 20px 0px 0px 60px;*/
+    margin: 2% 0px 0px 16px
+    /* margin: 0px 100px 0px 81px;*/
+}
+
+.dough2-in {
+    height: 100%;
+    margin: 0px 0px 0px 0px;
+}
+
+.dough2 {
+    height: 30px;
+    width: 700px;
+    margin: 15px 100px 0px 81px;
+}
+
+.dough-blue-text {
+    padding: 0%;
+    /*width: 66px;*/
+    width: 170px;
+    font-size: 13px;
+    /*margin-top: -12px;*/
+    margin-top: -15px;
+}
+
+.dough-blue {
+    /*border: 1px solid;*/
+    height: 100%;
+    height: 10px;
+    width: 10px;
+    margin: 0px 0px 0px -15px;
+    background-color: #67b7dc;
+}
+
+.dough-red {
+    border: 1px solid;
+    height: 10px;
+    width: 10px;
+    margin: 0px 0px 0px -15px;
+    background-color: #fdd400;
+}
+
+.datepick_row {
+    float: right;
+    width: 50%;
+    height: 35px;
+    margin: 10px 0px 10px 0px;
+}
+
+.datepick_txt {
+    font-size: 13px;
+    white-space: nowrap;
+    text-indent: 20px;
+    line-height: 11px;
+}
+
+.datepick {
+    width: 100%;
+    height: 35px;
+    margin: 10px 0px 50px 0px;
+}
+
+.cht_row {
+    margin: 0px;
+    height: 61%;
+    width: 100%;
+}
+
+.dough-green {
+    border: 1px solid;
+    height: 10px;
+    width: 10px;
+    margin: 0px 0px 0px -15px;
+    background-color: green;
+}
+
+.dough-yellow {
+    border: 1px solid;
+    height: 10px;
+    width: 10px;
+    margin: 0px 0px 0px -15px;
+    background-color: #cc4748;
+}
+
+.dough-skyblue {
+    border: 1px solid;
+    height: 10px;
+    width: 10px;
+    margin: 0px 0px 0px -15px;
+    background-color: #cd82ad;
+}
+
+.dough-black {
+    border: 1px solid;
+    height: 10px;
+    width: 10px;
+    margin: 0px 0px 0px -15px;
+    background-color: #2f4074;
+}
+
+.dough-darkGreen {
+    border: 1px solid;
+    height: 10px;
+    width: 10px;
+    margin: 0px 0px 0px -15px;
+    background-color: #448e4d;
+}
+
+.dough-lightYellow {
+    border: 1px solid;
+    height: 10px;
+    width: 10px;
+    margin: 0px 0px 0px -15px;
+    background-color: #b7b83f;
+}
+
+.dough-grey {
+    border: 1px solid;
+    height: 10px;
+    width: 10px;
+    margin: 0px 0px 0px -15px;
+    background-color: #b9783f;
+}
+
+.dough-darkred {
+    border: 1px solid;
+    height: 10px;
+    width: 10px;
+    margin: 0px 0px 0px -15px;
+    background-color: #b93e3d;
+}
+
+.dough-violet {
+    border: 1px solid;
+    height: 10px;
+    width: 10px;
+    margin: 0px 0px 0px -15px;
+    background-color: #913167;
+}
+
+.feature_select1 {
+    border-bottom: 2px solid #67b7dc;
+}
+
+.feature_select2 {
+    border-bottom: 2px solid #fdd400;
+}
+
+.feature_select3 {
+    border-bottom: green;
+}
+
+.feature_select4 {
+    border-bottom: 2px solid #cc4748;
+}
+
+.feature_select5 {
+    border-bottom: 2px solid #cd82ad;
+}
+
+.feature_select6 {
+    border-bottom: 2px solid #2f4074;
+}
+
+.feature_select7 {
+    border-bottom: 2px solid #448e4d;
+}
+
+.feature_select8 {
+    border-bottom: 2px solid #b7b83f;
+}
+
+.feature_select9 {
+    border-bottom: 2px solid #b9783f;
+}
+
+.feature_select10 {
+    border-bottom: 2px solid #b93e3d;
+}
+
+.feature_select11 {
+    border-bottom: 2px solid #913167;
+}
+
+.headmenu {
+        z-index: 100;
+    position: fixed;
+    width: 82% !important;
+    height: 70px;
+    text-align: center;
+    background-color: whitesmoke;
+    padding: 0 !important;
+    margin-left: 0%;
+    margin-top: 0%;
+    margin-bottom: 20px;
+}
+
+.headerStyle {
+    padding-left: 25%;
+}
+
+.logoutDivStyle {
+    padding-top: 1.5%;
+}
+
+.headmenu ul li {
+    width: 45px;
+    list-style: none;
+    display: table-cell;
+    margin: 0px 0px 0px 15px;
+}
+
+.menuicons {
+    width: 130px;
+    float: right;
+    height: 40px;
+}
+
+/*tspan {
+    display: none;
+}*/
+
+g.highcharts-button.highcharts-contextbutton {
+    display: none;
+}
+
+.amcharts-pie-label tspan {
+    display: none;
+}
+
+.calendar_icon {
+    background-image: url(../images/calendar%20icon_1.png);
+    background-repeat: no-repeat;
+    background-position: 6px;
+}
+
+.highcharts-title tspan {
+    display: none;
+}
+
+.highcharts-axis-title tspan {
+    display: none;
+}
+
+path.amcharts-pie-tick {
+    display: none;
+}
+
+.amcharts-export-menu.amcharts-export-menu-top-right.amExportButton {
+    display: none;
+}
+
+.amcharts-chart-div > a {
+    display: none !important;
+}
+
+.dropdown-menu {
+    min-width: 255px !important;
+}
+
+.frm_inp {
+    width: 90%;
+    border-radius: 0px;
+    margin: 4px 0px 0px 0px;
+}
+
+button.btnn:focus {
+    outline: none;
+}
+
+.datepick_inp {
+    width: 155px;
+    margin-left: 7px;
+}
+
+.formpic {
+    margin-left: 18px;
+    height: 40px;
+    width: 100%;
+    background-image: url(../images/forms-icon.png);
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    text-indent: 32px;
+    line-height: 32px;
+    cursor: pointer;
+}
+
+.ulLogoutIcon {
+    float: right;
+}
+
+.lgoutPic {
+    /* border-radius: 94px; */
+    width: 41px;
+    height: 40px;
+    background-image: url(../images/ico_logout.png);
+    background-size: 35px 32px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.lgoutPic:hover {
+    transition: all 200ms ease-in;
+    -webkit-transition: all 200ms ease-in;
+    -ms-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    /* background-image: url(../images/profile%20icon.png);*/
+    cursor: pointer;
+}
+
+.notifypic {
+    border-radius: 94px;
+    width: 36px;
+    height: 36px;
+    background-image: url(../images/notification%20icon_2.png);
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+}
+
+.notifypic:hover {
+    transition: all 200ms ease-in;
+    -webkit-transition: all 200ms ease-in;
+    -ms-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    background-image: url(../images/notification%20icon_active.png);
+}
+
+.searchpic {
+    border-radius: 94px;
+    width: 36px;
+    height: 36px;
+    background-image: url(../images/search%20icon.png);
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+}
+
+.searchpic:hover {
+    transition: all 200ms ease-in;
+    -webkit-transition: all 200ms ease-in;
+    -ms-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    background-image: url(../images/search%20icon_active.png);
+    border: 1px solid rgba(0, 0, 0, 0.4)
+}
+
+.formpic1 {
+    margin-left: 9px;
+    height: 40px;
+    width: 100%;
+    background-image: url(../images/question.png);
+    background-size: 45px 35px;
+    background-repeat: no-repeat;
+    text-indent: 45px;
+    line-height: 39px;
+    cursor: pointer;
+}
+
+.pointerClass {
+    cursor: pointer;
+}
+
+.datepick_inp1 {
+    width: 147px;
+    margin-left: 15px;
+}
+
+.datepick_rig {
+    /*float: right;*/
+}
+
+.date2Filter {
+    margin-top: 12px;
+}
+
+.nissianImg {
+    width: 60%;
+    height: 100px;
+    cursor: pointer;
+}
+
+.uNameStyle {
+    width: 20%;
+}
+
+.dropStyle {
+    margin-top: 4px;
+}
+
+.dropArrowStyle {
+    height: 15px;
+    width: 15px;
+    margin-top: -2px;
+}
+
+.logoutStyle {
+    height: 5%;
+    width: 40%;
+    color: #850222;
+    background-color: #ffffff;
+    position: absolute;
+    margin-left: 52%;
+    margin-top: -9px;
+    text-align: center;
+    padding-top: 4%;
+}
+
+.chart-Div {
+    height: auto;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 2% 0% 0% 5%;
+    margin-top: 60px;
+    /*border-bottom: 1px solid #dddddd;*/
+}
+
+@media (min-width:992px) {}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+    .chart-Div {
+        height: 55%;
+    }
+
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {}
+
+@media (max-width: 800px) and (min-width: 400px) {
+    .chart-Div {
+        height: 67%;
+    }
+}
+
+
+@media (min-width:1025px) {}
+
+@media (min-width:1281px) {
+    .nissianImg {
+        width: 50% !important;
+        height: 100px;
+        cursor: pointer;
+    }
+
+    .nissanImg-in {
+        background-image: url(../images/nissan-vector-logo.png);
+        background-repeat: no-repeat;
+        background-size: 85px;
+        background-position: 48% 51%;
+        margin: 0px;
+        width: 100%;
+        height: 100%;
+    }
+    .logoHW {
+        width: 138px;
+        height: 130px;
+    }
+    .infinityImg {
+        width: 50%;
+        height: 100px;
+        cursor: pointer;
+    }
+    .infinityImg-in {
+        background-image: url(../images/infiniti2.png);
+        background-repeat: no-repeat;
+        background-size: 65px 65px;
+        background-position: 55% 45%;
+        margin: 0px;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.btnn {
+    color: white;
+    border: none;
+    width: 70px;
+    height: 28px;
+    border-radius: 30px;
+    background-color: #c61935;
+    /*margin-left: 57px;*/
+}
+
+.drp {
+    box-shadow: none;
+    border: none;
+    border-bottom: 2px solid #c61935;
+    outline: none;
+}
+
+.drp:focus {
+    border-color: #850222;
+    outline: 0;
+    background-color: rgb(242, 242, 242);
+    /* -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6); */
+    /* box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6); */
+}
+
+.card-1 {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.card-1:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.test-clr {
+    border: 1px solid;
+    height: 100%;
+    height: 10px;
+    width: 10px;
+    margin: 0px 0px 0px -15px;
+}
+
+.selected {
+    /* background-color: black;
+    color: white;*/
+    /*border-bottom: 2px solid black;*/
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.barchartpadding {
+    /*height: 70%;*/
+    padding: 1% 0% 0% 0%;
+}
+
+.barchartMargin {
+    margin: 0px 10px 0px 0px;
+    width: 49%;
+}
+
+.barchartMargin1 {
+    margin: 0px 10px 0px 0px;
+    width: 48%;
+}
+
+
+.pieChartNodataStyle {
+    height: 100%;
+    width: 100%;
+    /*border: 1px solid;*/
+    text-align: center;
+    vertical-align: middle !important;
+    /* margin-top: 5; */
+    /*padding-top: 15%;*/
+    padding-top: 133px;
+}
+
+.barChartNodataStyle {
+    height: 100%;
+    text-align: center;
+    /*padding-top: 22%;*/
+    padding-top: 82px;
+}
+
+.modalStyle {
+    margin-top: 15px;
+}
+
+.modalErrorStyle {
+    color: red;
+    text-align: center;
+}
+
+.calc_color {
+    width: 30px;
+    height: 28px;
+}
+
+.pieChartDiv {
+    width: 80% !important;
+    margin-left: 12px;
+}
+
+.barChartDivStyle {
+    width: 100%;
+    height: 67px;
+    margin: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.in-page {
+    min-height: 520px;
+}
+
+.main {
+    position: relative;
+}
+
+a {
+    color: #1b5a7c;
+}
+
+a:hover,
+a:focus {
+    color: #1b5a7c;
+}
+
+.btn-cyan {
+    background-color: #1b5a7c;
+    color: #fff;
+}
+
+.btn-cyan:hover {
+    color: #fff;
+    opacity: 0.9;
+}
+
+.form-control:focus {
+    border-color: #1b5a7c;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(24, 204, 162, 0.6);
+    outline: 0 none;
+}
+
+.min-height {
+    min-height: 380px;
+    margin-left: 150px;
+}
+
+.login-screen {
+    background-image: url(https://www.squiz.net/__public/Systems/Perspective/FileCache/1-32000/465/prop/header-bg-image.jpg?t=1472431690);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.login-screen:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.login-center {
+    text-align: left;
+}
+
+.login {
+    width: 320px;
+    color: #fff;
+}
+
+.login .login-form {
+    text-align: left;
+}
+
+.login label {
+    color: #fff;
+}
+
+.login-form .input-group .form-control {
+    background: none;
+    height: 44px;
+    color: #ddd;
+}
+
+.login-form .input-group .input-group-addon {
+    background: none;
+}
+
+.login-form .input-group .input-group-addon .glyphicon {
+    color: #1b5a7c;
+}
+
+.login-form .input-group .form-control::-moz-placeholder {
+    color: #fff;
+    opacity: 0.3;
+}
+
+.rem {
+    margin-left: -135px !important;
+    white-space: nowrap;
+    text-indent: 15px;
+    font-size: 14px;
+    line-height: 0px;
+}
+
+.rem::after {
+    content: "Remember Me";
+    color: black;
+}
+
+.fm1 {
+    background-color: white;
+    backface-visibility: hidden;
+    /*padding: 10%;*/
+    padding: 15% 10% 10% 10%;
+    border-radius: 4px;
+}
+
+.fm2 {
+    background-color: white;
+    backface-visibility: hidden;
+    padding: 10%;
+    border-radius: 4px;
+}
+
+.login .sign-btn input.btn {
+    background: #1b5a7c;
+    border-color: #1b5a7c;
+    color: #fff;
+    width: 180px;
+}
+
+.signup1 {
+    margin-left: 73px !important;
+}
+
+.signup {
+    text-align: center;
+    backface-visibility: hidden;
+    width: 100%;
+    margin-left: 55px;
+}
+
+.login .sign-btn a {
+    text-decoration: none;
+}
+
+.login .checkbox {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.login .forgot {
+    display: inline-block;
+    margin: 20px 0;
+}
+
+.text-center1 {
+    /* text-align: center; */
+    float: left;
+}
+
+.forgot-password {
+    cursor: pointer;
+}
+
+.forgot-password:focus {
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
+}

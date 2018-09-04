@@ -1,0 +1,224 @@
+/* Change the white to any color ;) */
+
+/*input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+    -webkit-text-fill-color: yellow !important;
+}*/
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+}
+
+
+/* Responsive: Portrait tablets and up */
+
+@media screen and (orientation:portrait) {
+    body {
+        -ms-transform: rotate(-90deg);
+        /* IE 9 */
+        -webkit-transform: rotate(-90deg);
+        /* Chrome, Safari, Opera */
+        transform: rotate(-90deg);
+    }
+}
+
+
+/* (1440x900) WXGA+ Display */
+
+@media screen and (max-width: 1440px) {
+    .sendCmdBtnDivTrial {
+        width: 96% !important;
+        margin-left: -8px;
+    }
+    ul.dropdown-menu {
+        width: 90% !important;
+    }
+    .modal-dialog {
+        margin-top: 25% !important;
+    }
+    .pagination {
+        margin: 10px 25% !important;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .sendCmdBtnDivTrial {
+        width: 95.5% !important;
+        margin-left: -8px !important;
+    }
+    .modal-dialog {
+        margin-top: 26% !important;
+    }
+    /*.otaTableDivStyle {
+        height: 56% !important;
+    }*/
+}
+
+/* ----------- Non-Retina Screens ----------- */
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+    /*.otaTableDivStyle {
+        height: 55% !important;
+    }*/
+}
+
+/* ----------- Retina Screens ----------- */
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+    /*.otaTableDivStyle {
+        height: 65% !important;
+    }*/
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    ul.dropdown-menu {
+        width: 86% !important;
+    }
+    .sms-Gateway .ltequipments {
+        width: 86% !important;
+    }
+    .sendCmdBtnDivTrial {
+        width: 95% !important;
+    }
+    .navbar-brand {
+        padding-top: 26px !important;
+    }
+
+    .modal-dialog {
+        margin-top: 30% !important;
+    }
+
+    /*ota tab Table style */
+   /* .otaTableDivStyle {
+        height: 53% !important;
+    }*/
+    .pagination {
+        margin: 10px 25% !important;
+    }
+
+}
+
+@font-face {
+    font-family: 'GothamNarrow-Medium';
+    src: url('../fonts/GothamNarrow-Medium/GothamNarrow-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/GothamNarrow-Medium/GothamNarrow-Medium.otf') format('opentype'), url('../fonts/GothamNarrow-Medium/GothamNarrow-Medium.woff') format('woff'), url('../fonts/GothamNarrow-Medium/GothamNarrow-Medium.ttf') format('truetype'), url('../fonts/GothamNarrow-Medium/GothamNarrow-Medium.svg#GothamNarrow-Medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GothamNarrow-Light';
+    src: url('../fonts/GothamNarrow-Light/GothamNarrow-Light.eot?#iefix') format('embedded-opentype'), url('GothamNarrow-Light.otf') format('opentype'), url('../fonts/GothamNarrow-Light/GothamNarrow-Light.woff') format('woff'), url('../fonts/GothamNarrow-Light/GothamNarrow-Light.ttf') format('truetype'), url('../fonts/GothamNarrow-Light/GothamNarrow-Light.svg#GothamNarrow-Light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GothamNarrow-Book';
+    src: url('../fonts/GothamNarrow-Book/GothamNarrow-Book.eot?#iefix') format('embedded-opentype'), url('../fonts/GothamNarrow-Book/GothamNarrow-Book.otf') format('opentype'), url('../fonts/GothamNarrow-Book/GothamNarrow-Book.woff') format('woff'), url('../fonts/GothamNarrow-Book/GothamNarrow-Book.ttf') format('truetype'), url('../fonts/GothamNarrow-Book/GothamNarrow-Book.svg#GothamNarrow-Book') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GothamNarrow-Bold';
+    src: url('../fonts/GothamNarrow-Bold/GothamNarrow-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/GothamNarrow-Bold/GothamNarrow-Bold.otf') format('opentype'), url('../fonts/GothamNarrow-Bold/GothamNarrow-Bold.woff') format('woff'), url('../fonts/GothamNarrow-Bold/GothamNarrow-Bold.ttf') format('truetype'), url('../fonts/GothamNarrow-Bold/GothamNarrow-Bold.svg#GothamNarrow-Bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+button.dropdown-toggle.btn.btn-default:active,
+button.dropdown-toggle.btn.btn-default:focus,
+button.dropdown-toggle.btn.btn-default.active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #AFABAB;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #AFABAB;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #AFABAB;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: #AFABAB;
+}
+
+html,
+body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'GothamNarrow-Book';
+    font-size: 15px;
+    background-color: #F2F2F2;
+}
+
+.modal-open .modal {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.customModalStyle {
+    width: 100%;
+    text-align: center;
+}
+
+.customModalStyleFooter {
+    background-color: white;
+    text-align: center;
+}
+
+.customModalStyleButton {
+    background: #ffcb06;
+    color: black;
+    border: #ffcb06;
+}
+
+body > div#wrapper2 {
+    height: 100%;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    color: #262626;
+    text-decoration: none;
+    background-color: white;
+}
+
+button:focus {
+    outline: 0;
+}
+
+.form-control::-ms-clear {
+    display: none;
+}
+
+.centerAlign {
+    text-align: center;
+}
+
+.marginTags {
+    margin-right: 15px;
+    margin-left: 15px;
+}

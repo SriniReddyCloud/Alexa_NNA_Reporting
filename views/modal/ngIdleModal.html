@@ -1,0 +1,27 @@
+<!--
+<div class="modal-division">
+    <div ng-controller="teleDashBoardCtrl" data-target="myModal">
+        <div class="modal-header">
+            <h3>You're Idle for half an hour, so you are being redirect to Login Page!</h3>
+        </div>
+         <div idle-countdown="countdown" ng-init="countdown=5" class="modal-body">
+            <uib-progressbar max="5" value="5" animate="false" class="progress-striped active">You'll be logged out in {{countdown}} second(s).</uib-progressbar>
+            <div class="modal-btnDiv">
+                <button type="button" class="btn btn-default" style="background: #ffcb06;color: black;border: #ffcb06;text-align:center;" ng-click="loggedOut()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+
+<div class="customModalStyle">
+    <div class="modal-header" style="height:60px;">
+        <h3>Your session has expired due to inactivity.</h3>
+    </div>
+    <div class="modal-body">
+        <h5 class="modal-title" style="font-size: 15px;text-align:left;">{{header}}</h5>
+    </div>
+    <div class="modal-footer customModalStyleFooter">
+        <button class="btn btn-primary" style="background: #7F7F7F;color: white !important;border: #7F7F7F;text-align:center;width: 120px !important;" ng-click="loggedOut()">OK</button>
+    </div>
+</div>

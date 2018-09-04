@@ -1,0 +1,439 @@
+<div class="wrapper row">
+    <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2 logoDiv ">
+        <div class="row logoTopDiv">
+            <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6 nissianImg" ng-class="{'logo' : nissanStatus, 'logo1' : !nissanStatus}" ng-click="logoClick('nissan')">
+                <div class="nissanImg-in"></div>
+            </div>
+            <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6 infinityImg" ng-class="{'logo1' : nissanStatus, 'logo' : !nissanStatus}" ng-click="logoClick('infiniti')">
+                <div class="infinityImg-in"></div>
+            </div>
+        </div>
+        <div class="row dashMgmtBorder1 cursorDiv1 dashMgmtDivHeight" ng-class="{'dash' : areaStatus, 'dash1' : !areaStatus}">
+            <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2 userMgmtImg">
+                <img class="dashMgmtIcon" src="images/user icon.png" />
+            </div>
+            <div ng-if="showSignin" class="col-md-8 col-xs-8 col-sm-8 col-lg-8 dashMgmtMarginTop dashMgmtPaddingLeft" data-toggle="modal" data-target="#myModalNorm">
+                <p class="dashLeftDivCW dashMnmgtTagStyle" ng-click="showDash()">SIGNIN/REGISTER</p>
+            </div>
+            <div ng-if="!showSignin" class="row dashMgmtMarginTop dashMgmtPaddingLeft">
+                <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6 uNameStyle">
+                    <p class="dashLeftDivCW dashMnmgtTagStyle">{{uName}}</p>
+                </div>
+                <!-- <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6 dropStyle">
+                    <div ng-click="showLogout()">
+                        <img src="images/arrow1.png" class="dropArrowStyle">
+                    </div>
+                </div>-->
+            </div>
+        </div>
+        <div class="row dashMgmtBorder cursorDiv dashMgmtDivHeight" ng-class="{'dash1' : areaStatus, 'dash' : !areaStatus}">
+            <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2 userMgmtImg">
+                <img class="dashMgmtIcon" src="images/dashboard icon.png" />
+            </div>
+            <div class="col-md-8 col-xs-8 col-sm-8 col-lg-8 dashMgmtMarginTop dashMgmtPaddingLeft">
+                <p class="dashLeftDivCW dashMnmgtTagStyle" ng-click="showDash()">DASHBOARD</p>
+            </div>
+        </div>
+        <div class="row usrMgmtBorder cursorDiv dashMgmtDivHeight" ng-class="{mgmt:showMgmtPanel}">
+            <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2 userMgmtImg">
+                <img class="dashMgmtIcon" src="images/user management icon.png" />
+            </div>
+            <div class="col-md-7 col-xs-7 col-sm-7 col-lg-7 dashMgmtMarginTop dashMgmtPaddingLeft">
+                <p class="dashLeftDivCW dashMnmgtTagStyle" ng-click="showMgmt()">USER MANAGEMENT</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-10 col-xs-10 col-sm-10 col-lg-10 divMarginLeft">
+      <div class="headmenu row" resize style="width={{windowWidth}}">
+                <div class="col-md-9 col-xs-9 col-sm-9 col-lg-9 headerStyle">
+                    <h3>Nissan Alexa Reports</h3>
+                </div>
+                <div class="col-md-3 col-xs-3 col-sm-3 col-lg-3 logoutDivStyle">
+                    <div class="menuicons">
+                        <ul class="ulLogoutIcon">
+                            <li>
+                                <div class="search lgoutPic" ng-click="logout()"></div>
+                            </li>
+                            <!--<li>
+                                <div class="search notifypic"></div>
+                            </li>-->
+                            <!-- <li>
+                            <div class="notify searchpic"></div>
+                        </li>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        <div class="chart-Div">
+            
+
+            <div class="row" style="width: 100%;margin: 0px;">
+                <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4">
+                    <div class="form-group">
+                        <select class="form-control frm_inp drp" ng-options="c.key as c.value for c in dropValues" ng-model="selectedValue" ng-change="skillChange(selectedValue)" required>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-8 col-xs-8 col-sm-8 col-lg-8 row datepick_dough_row">
+                    <div class="datepick_txt col-md-2 col-xs-2 col-sm-2 col-lg-2 filter_style">Filter By</div>
+                    <div class="datepick_inp col-md-4 col-xs-4 col-sm-4 col-lg-4">
+                        <div class="input-group">
+                            <span class="input-group-btn calendar_icon">
+                              <button type="button" class="btn  calendar_icon calc_color" ng-click="openfromDateValue($event)">
+                                <!--<i class="glyphicon glyphicon-calendar"></i>-->
+                              </button>
+                            </span>
+                            <input readonly type="text" class="form-control input_style" ng-model="fromdate" min-date="'2017-10-06T12:00:00.000Z'" ng-change="fromDateValue(fromdate)" max-date="{{toMaxDate}}" datepicker-popup="d MMM yyyy" datepicker-options="{{optionsfromdate}}" is-open="openedfromdate" close-text="Close" ng-required="true" />
+                        </div>
+                    </div>
+                    <div class="datepick_inp col-md-4 col-xs-4 col-sm-4 col-lg-4">
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                              <button type="button" class="btn calendar_icon calc_color" ng-click="opentoDateValue($event)">
+                                <!--<i class="glyphicon glyphicon-calendar"></i>-->
+                              </button>
+                            </span>
+                            <input readonly type="text" class="form-control input_style" ng-model="todate" min-date="'2017-10-06T12:00:00.000Z'" ng-change="toDateValue(todate)" max-date="{{toMaxDate}}" datepicker-popup="d MMM yyyy" datepicker-options="{{optionstodate}}" is-open="openedtodate" close-text="Close" ng-required="true" />
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2 datepick_rig">
+                        <button type="button" class="btnn" ng-click="getPieChartDatas(fromdate,todate)">Submit</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="chart-dough">
+                <div class="row dough-content">
+                    <div class="col-md-9 col-xs-9 col-sm-9 col-lg-9 dough-chart card-1 pieChartDiv">
+                        <div ng-show="showPieChart" id="chartdiv"></div>
+                        <div ng-show="!showPieChart" class="pieChartNodataStyle">
+                            <!--<h2>No Data Found</h2>-->
+                            <img src="images/noData.png">
+                        </div>
+                    </div>
+                    <div ng-show="showPieDatas" ng-repeat="pieDatas in pieDatas" class="col-md-3 col-xs-3 col-sm-3 col-lg-3 dough-index">
+                        <div class="card-1 index">
+                            <div class="row index1">
+                                Features
+                            </div>
+                            <div class="row index2">
+                                {{pieDatas.featurename}}
+                            </div>
+                            <div class="row index3">
+                                <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6 index3-in-txt">
+                                    Errors
+                                </div>
+                                <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6 index3-in-val">
+                                    {{pieDatas.failureCount}}
+                                </div>
+
+                            </div>
+                            <div class="row index4">
+                                <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6 index3-in-txt">
+                                    Success
+                                </div>
+                                <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6 index3-in-val">
+                                    {{pieDatas.successCount}}
+                                </div>
+                            </div>
+                            <div class="row index5">
+                                <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6 index3-in-txt">
+                                    Access
+                                </div>
+                                <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6 index3-in-val">
+                                    {{pieDatas.totalAccessCount}}
+                                </div>
+                            </div>
+                            <div class="row index6">
+                                <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6 index3-in-txt">
+                                    Customers
+                                </div>
+                                <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6 index3-in-val">
+                                    {{pieDatas.noOfUsers}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dough">
+                <div ng-if="showFeatureNames" class="row">
+                    <div ng-repeat="feature in pieChartFeatureName" class="col-md-2 col-xs-2 col-sm-2 col-lg-2 dough1-in">
+                        <div class="dough-blue" ng-style="{'background': doc_classes_colors[$index % doc_classes_colors.length],'text-decoration': underline}">
+                            <div class="d-blue">
+                            </div>
+                        </div>
+                        <div ng-class="{selected : feature.orgName === idSelectedVote}" class="col-md-9 col-xs-9 col-sm-9 col-lg-9 dough-blue-text">{{feature.orgName}}</div>
+                    </div>
+                </div>
+                <div ng-if="!showFeatureNames" class="row"></div>
+                <hr>
+            </div>
+        </div>
+        <div class="content">
+            <div class="row barDivCenter">
+                <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6">Remote Command Summary</div>
+                <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6">Unrecognized Utterances</div>
+            </div>
+            <div class="row barChartDivStyle">
+                <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6 row datepick_dough_row date2Filter">
+                    <div class="datepick_txt col-md-2 col-xs-2 col-sm-2 col-lg-2 filter_style">Filter By</div>
+                    <div class="datepick_inp col-md-4 col-xs-4 col-sm-4 col-lg-4">
+                        <div class="input-group">
+                            <span class="input-group-btn calendar_icon">
+                              <button type="button" class="btn  calendar_icon calc_color" ng-click="opendoughtFromdateValue1($event)">
+                                <!--<i class="glyphicon glyphicon-calendar calc_color"></i>-->
+                              </button>
+                            </span>
+                            <input readonly type="text" class="form-control input_style" ng-model="doughtFromdate1" min-date="'2017-10-06T12:00:00.000Z'" ng-change="doughtFromdateValue1(doughtFromdate1)" max-date="{{toMaxDate}}" datepicker-popup="d MMM yyyy" datepicker-options="{{optionsdoughtFromdate1}}" is-open="openeddoughtFromdate1" close-text="Close" ng-required="true" />
+                        </div>
+                    </div>
+                    <div class="datepick_inp1 col-md-4 col-xs-4 col-sm-4 col-lg-4">
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                              <button type="button" class="btn calendar_icon calc_color" ng-click="opendoughtTodateValue1($event)">
+                                <!--<i class="glyphicon glyphicon-calendar"></i>-->
+                              </button>
+                            </span>
+                            <input readonly type="text" class="form-control input_style" ng-model="doughtTodate1" min-date="'2017-10-06T12:00:00.000Z'" ng-change="doughtTodateValue1(todate1)" max-date="{{toMaxDate}}" datepicker-popup="d MMM yyyy" datepicker-options="{{optionsdoughtTodate1}}" is-open="openeddoughtTodate1" close-text="Close" ng-required="true" />
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2 datepick_rig">
+                        <button type="button" class="btnn" ng-click="dailyCmdReport(doughtFromdate1,doughtTodate1)">Submit</button>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6 row datepick_dough_row date2Filter">
+                    <div class="datepick_txt col-md-2 col-xs-2 col-sm-2 col-lg-2 filter_style">Filter By</div>
+                    <div class="datepick_inp col-md-4 col-xs-4 col-sm-4 col-lg-4">
+                        <div class="input-group">
+                            <span class="input-group-btn calendar_icon">
+                              <button type="button" class="btn  calendar_icon calc_color" ng-click="opendoughtFromdateValue($event)">
+                                <!--<i class="glyphicon glyphicon-calendar"></i>-->
+                              </button>
+                            </span>
+                            <input readonly type="text" class="form-control input_style" ng-model="doughtFromdate" min-date="'2017-10-06T12:00:00.000Z'" ng-change="doughtFromdateValue(doughtFromdate)" max-date="{{toMaxDate}}" datepicker-popup="d MMM yyyy" datepicker-options="{{optionsdoughtFromdate}}" is-open="openeddoughtFromdate" close-text="Close" ng-required="true" />
+                        </div>
+                    </div>
+                    <div class="datepick_inp1 col-md-4 col-xs-4 col-sm-4 col-lg-4">
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                              <button type="button" class="btn calendar_icon calc_color" ng-click="opendoughtTodateValue($event)">
+                                <!--<i class="glyphicon glyphicon-calendar"></i>-->
+                              </button>
+                            </span>
+                            <input readonly type="text" class="form-control input_style" ng-model="doughtTodate" min-date="'2017-10-06T12:00:00.000Z'" ng-change="doughtTodateValue(todate)" max-date="{{toMaxDate}}" datepicker-popup="d MMM yyyy" datepicker-options="{{optionsdoughtTodate}}" is-open="openeddoughtTodate" close-text="Close" ng-required="true" />
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2 datepick_rig">
+                        <button type="button" class="btnn" ng-click="unrecognizedUttrances(doughtFromdate,doughtTodate)">Submit</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row cht_row">
+                <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6 card-1 barchartpadding barchartMargin">
+                    <a clas="pointerClass" ng-click="RCMS()">
+                        <p class="formpic">Remote Command Summary</p>
+                    </a>
+                    <div ng-show="showDailyCmdGraph">
+                        <div id="chartCommands" style="min-width: 400px; height: 288px;"></div>
+                        <!--<div class="chart1-axis">
+                            <p style="text-align: center;">Days in Week
+                            </p>
+                        </div>-->
+                    </div>
+                    <div ng-show="!showDailyCmdGraph" class="barChartNodataStyle">
+                        <!--<h2>No Data Found</h2>-->
+                        <img src="images/noData.png">
+                    </div>
+                </div>
+                <div class=" col-md-6 col-xs-6 col-sm-6 col-lg-6 card-1 barchartpadding barchartMargin1">
+                    <a clas="pointerClass" ng-click="URUT()">
+                        <p class="formpic1">Unrecognized Utterances</p>
+                    </a>
+                    <div ng-show="showuttrance">
+                        <div id="CartUttrances" style="min-width: 400px; height: 288px;"></div>
+                        <!-- <div class="chart2-axis">
+                            <p style="text-align: center;">Days in Week
+                            </p>
+                        </div>-->
+                    </div>
+                    <div ng-show="!showuttrance" class="barChartNodataStyle">
+                        <!--<h2>No Data Found</h2>-->
+                        <img src="images/noData.png">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="myModalNorm" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="">
+            <div class="modal-body modalPadding">
+                <div class="">
+                    <!--<div class="row">
+                        <div class="col-md-12 col-md-offset-3">
+                            <div class="panel panel-login">
+                                <div class="panel-heading">
+                                    <div class="row modalStyle">
+                                        <div class="col-xs-6">
+                                            <a href="#" class="active" id="login-form-link">Login</a>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <a href="#" id="register-form-link">Register</a>
+                                        </div>
+                                        <button type="button" class="close modalCloseBtn" ng-click="modalClose()" data-dismiss="modal">
+                                            <span aria-hidden="true">&times;</span>
+                                            <span class="sr-only">Close</span>
+                                        </button>
+                                    </div>
+                                    <hr>
+                                </div>
+                                <div ng-if="errorloggin" class="modalErrorStyle">Invalid Username (or) Password</div>
+                                <div class="panel-body panelPaddingbody">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <form id="login-form" action="https://phpoll.com/login/process" method="post" role="form" style="display: block;">
+                                                <div class="form-group">
+                                                    <input type="text" name="username" id="username" tabindex="1" class="form-control" ng-model="userName" placeholder="Username" value="" ng-click="hideErrorDiv()">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="password" name="password" id="password" tabindex="2" class="form-control" ng-model="password" placeholder="Password" ng-click="hideErrorDiv()">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-sm-6 col-sm-offset-3">
+                                                            <input type="button" ng-click="loggin(userName,password)" tabindex="4" class="modalLogin btn btn-login" value="Log In">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <div class="text-center">
+                                                                <a tabindex="5" class="forgot-password">Forgot Password?</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 form-group text-center">
+                                                            <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+                                                            <label for="remember"> Remember Me</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <form id="register-form" method="post" role="form" style="display: none;">
+                                                <div class="form-group">
+                                                    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-sm-6 col-sm-offset-3">
+                                                            <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+
+
+
+
+
+
+
+
+
+
+                    <div class="login-center">
+                        <div class="container min-height" style="margin-top: 20px;">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <div class="login" id="card">
+                                        <div class="front signin_form">
+                                            <form class="login-form fm1">
+                                                <div ng-if="errorloggin" class="modalErrorStyle">Invalid Username (or) Password</div>
+                                                <div class="form-group">
+                                                    <input type="text" name="username" id="username" class="form-control" ng-model="userName" placeholder="Username" value="" ng-click="hideErrorDiv()" ng-enter="loggin(userName,password)">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="password" name="password" id="password" class="form-control" ng-model="password" placeholder="Password" ng-enter="loggin(userName,password)" ng-click="hideErrorDiv()">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <input type="button" ng-click="loggin(userName,password)" class="modalLogin btn btn-login" value="Log In">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-lg-8">
+                                                            <div class="text-center1">
+                                                                <a class="forgot-password">Forgot Password?</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 form-group text-center">
+                                                            <input type="checkbox" class="rem" name="remember" id="remember">
+                                                        </div>
+                                                        <a href="#" id="flip-btn" class="signup signup_link">Sign up for a new account</a>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="back signup_form" style="opacity: 0;">
+                                            <form class="login-form fm2">
+                                                <div class="form-group">
+                                                    <input type="text" name="username" id="username" ng-model="register.uName" class="form-control" placeholder="Username" value="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="email" name="email" id="email" ng-model="register.uEmail" class="form-control" placeholder="Email Address" value="">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="password" name="password" id="password" ng-model="register.uPwd" class="form-control" placeholder="Password">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="password" name="confirm-password" id="confirm-password" ng-model="register.uCPwd" class="form-control" placeholder="Confirm Password">
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" href="#" id="unflip-btn" value="Register Now" ng-click="registerNow(register)">
+                                                        </div>
+                                                    </div>
+                                                    <br/>
+                                                    <a href="#" id="unflip-btn" class="signup1">Back to Log in</a>
+                                                </div>
+
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

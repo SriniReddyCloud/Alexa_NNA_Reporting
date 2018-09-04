@@ -1,0 +1,73 @@
+<html lang="en ng-app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Nissan-Infiniti</title>
+    <!--styles-->
+
+    <!-- build:css(app) styles/vendor.css -->
+    <link rel="stylesheet" href="styles/angular-loading-bar0.8.0.css">
+    <link rel="stylesheet" href="styles/bootstrap3.2.0.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="styles/font-awesome.css"> -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/styleOrg.css">
+    <link rel="stylesheet" href="styles/dash.css">
+    <link rel="stylesheet" href="styles/export.css" type="text/css" media="all" />
+    <!-- endbuild -->
+
+    <!-- build:js(app) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="scripts/custom/jquery-2.2.1.js"></script>
+    <script src="scripts/custom/angularjs1.5.0.js"></script>
+    <!-- <script src="scripts/custom/angular.min.js"></script> -->
+    <script src="scripts/custom/angular-loading-bar-0.8.0.js"></script>
+    <script src="scripts/custom/angular-animate1.4.0.js"></script>
+    <script src="scripts/custom/angular-sanitize1.4.0.js"></script>
+    <script src="scripts/custom/angular-idle1.2.2.js"></script>
+    <script src="scripts/custom/ngStorage.js"></script>
+    <script src="scripts/custom/lodash2.4.1.js"></script>
+    <script src="scripts/custom/ui-bootstrap-tpls-0.14.0.js"></script>
+    <script src="scripts/custom/angular-ui-router1.0.3.js"></script>
+    <script src="scripts/custom/bootstrap3.2.0.js"></script>
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/pie.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Flip/1.0.18/jquery.flip.js"></script>
+    <script src="https://raw.githubusercontent.com/timrwood/moment/1.7.2/min/moment.min.js"></script>
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+
+    <script src="https://code.highcharts.com/js/highcharts.js"></script>
+    <script src="https://code.highcharts.com/js/modules/exporting.js"></script>
+    <!--<script src="https://code.highcharts.com/js/highcharts.js"></script>
+    <script src="https://code.highcharts.com/js/modules/exporting.js"></script>-->
+
+    <!--convert the file to xcel and download -- headers-->
+    <script src="https://cdn.jsdelivr.net/alasql/0.3/alasql.min.js"></script>
+    <!--   <script src="https://cdnjs.cloudflare.com/ajaz/libs/xlsx/0.7.12/xlsx.core.min.js"></script>-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.12/xlsx.core.min.js"></script>
+
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/dashCtrl.js"></script>
+    <script src="scripts/Services/globalService.js"></script>
+    <script src="scripts/Services/getServiceValues.js"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div ui-view></div>
+</body>
+
+</html>

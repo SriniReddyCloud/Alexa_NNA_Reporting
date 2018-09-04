@@ -1,0 +1,242 @@
+<div ng-if="showLeftSndCmdPart" class="col-md-3 col-xs-3 col-sm-3 col-lg-3" ng-style="teleSplitPartLeft">
+
+    <div class="sendCmdLeftPartDiv">
+        <div class="selectBranchDiv">
+            <!--<p class="topimagetm"><img alt="herc-logo" src="./images/slidein-back-aro.png"></p>-->
+            <p class="selectBranch">Select Branch</p>
+            <!-- <div ng-dropdown-multiselect-branch="" options="getBranchDatas" placeholder="Select Branch" fn="branchDataDirectiveValues(msg, name)" send-datas="sendBranchDatas(msg)" selected-model="example14model" checkboxes="true" extra-settings="example14settings" style="width: 100%;"></div> -->
+            <div class="newGrup dropdown-scheduler">
+                <div class="no-padding geofencename treeview sms-Gateway">
+                    <button class="geotreeBtn btn dropdown-toggle dynamic-toggle" ng-click="toggleDropLoad();selectedNodes();"><span class="textwrapequip">{{selectedText | limitTo:20}}</span> <b class="alignright caret"></b>
+                    </button>
+                    <div ng-if="opened" class="ltequipments">
+                        <div class="">
+                            <div class="">
+                                <ul class="sidebar-menu fullWidth paddingValue" id="nav-accordion">
+                                    <li class="sidebar-search" style="width:15%;text-align:left;">
+                                        <span class="cursor" ng-click="selectAll('Branches')"> All</span>
+                                    </li>
+                                    <li class="sidebar-search text-center" style="width:45%;text-align:center;">
+                                        <span class="cursor">{{selectedBranchCount.length}}&nbsp;&nbsp;Selected</span>
+                                    </li>
+                                    <li class="sidebar-search text-right" style="width:40%;text-align:center;">
+                                        <span class="cursor" ng-click="clearAll('Branches');">Clear All</span>
+                                    </li>
+                                </ul>
+                                <ul class="sidebar-menu divider fullWidth" id="nav-accordion">
+                                    <li class="sidebar-search">
+                                        <div class="custom-search-form">
+                                            <form>
+                                                <input class="form-control" placeholder="Search by Branch" type="text" ng-model="searchValueBranch.value">
+                                                <!--<span class="searchBoxBranch" ng-click="searchBranch(searchValueBranch.value)"> <i ><img class="searchImgWidth" src="images/search-icon.png"></i> </span>-->
+                                                <button ng-show="searchValueBranch.value.length" type="reset" value="Reset" ng-click="cancelSearch(searchValueBranch.value);" class="branchCloseSearch">X</button>
+                                            </form>
+                                            <!--<a id="searchclear1" ng-show="searchValueBranch.value.length" href="" ng-click="clearSearch()" class="branchCloseSearch"> <i class="fa fa-search"><img src="images/close_icon.png"></i> </a>-->
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul pv-scrolled="loadMoreBranches()" id="brcnchscrolldiv" class="paddingTopValue scrollbar">
+                                    <li ng-if="masterBranchList.length" ng-repeat="options in test = (masterBranchList) | filter:searchValueBranch" class="equipment-tree-list-value">
+                                        <div class="pull-left">
+                                            <label class="control control--checkbox" for="sltdvalue{{options.value}}">{{options.value}}&nbsp;&nbsp;
+                                                <input id="sltdvalue{{options.value}}" type="checkbox" ng-model="options.IsSelected" ng-change="countForSelectedBranches(options)">
+                                                <div class="control__indicator"></div>
+                                            </label>
+                                        </div>
+                                        <div class="clearboth"></div>
+                                    </li>
+                                    <li ng-if="!branchListPag.length" class="centerAlign">No Branches found</li>
+                                </ul>
+                            </div>
+                            <div class="ltdone"><a href class="btn" ng-click="toggleDropLoad();selectedNodes();">Done</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="selectEquipmentDiv">
+            <p class="selectEquipment">Select Device</p>
+            <div class="newGrup dropdown-scheduler">
+                <div class="no-padding geofencename treeview sms-Gateway">
+                    <button class="geotreeBtn btn dropdown-toggle dynamic-toggle" ng-click="selectedDevice();toggleDropLoadDevice();"><span class="textwrapequip">{{selectedTextForDevice | limitTo:24}}</span> <b class="alignright caret"></b>
+                    </button>
+                    <div ng-if="openedDevice" class="ltequipments">
+                        <div class="">
+                            <div ng-if="showDeviceDatas" class="">
+                                <ul class="sidebar-menu fullWidth paddingValue" id="nav-accordion">
+                                    <li class="sidebar-search" style="width:15%;text-align:left;">
+                                        <span class="cursor" ng-click="selectAll('Devices')"> All</span>
+                                    </li>
+                                    <li class="sidebar-search" style="width:45%;text-align:center;">
+                                        <span class="cursor">{{selectedDeviceCount.length}}&nbsp;&nbsp;Selected</span>
+                                    </li>
+                                    <li class="sidebar-search" style="width:40%;text-align:center;">
+                                        <span class="cursor" ng-click="clearAll('Devices');searchDeviceValue = null;">Clear All</span>
+                                    </li>
+                                </ul>
+                                <ul class="sidebar-menu divider fullWidth" id="nav-accordion">
+                                    <li class="sidebar-search">
+                                        <div class=" custom-search-form">
+                                            <form>
+                                                <input class="form-control" placeholder="Search by Phone#" type="text" ng-model="searchDeviceValue" ng-enter="searchDevice(searchDeviceValue)">
+                                                <span class="searchBoxBranch" ng-click="searchDevice(searchDeviceValue)"> <i><img class="searchImgWidth" src="images/search-icon.png"></i></span>
+                                                <button ng-show="searchDeviceValue.length" type="reset" value="Reset" ng-click="cancelDeviceSearch(searchDeviceValue);searchDeviceValue = null;" class="branchCloseSearch">X</button>
+                                            </form>
+                                            <!--<a id="searchclear1" ng-show="searchDeviceValue.length" href="" ng-click="clearSearch()" class="branchCloseSearch"> <i class="fa fa-search"><img src="images/close_icon.png"></i> </a>-->
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul pv-scrolled="loadMoreDevices()" id="devscrolldiv" class="paddingTopValue scrollbar">
+                                    <li ng-if="deviceListPag.length" ng-repeat="options in test = (deviceListPag)" class="equipment-tree-list-value">
+                                        <!-- | filter:searchDeviceValue -->
+                                        <div class="pull-left">
+                                            <label class="control control--checkbox" for="sltdvalue{{options.value}}">{{options.value}}&nbsp;&nbsp;
+                                                <input id="sltdvalue{{options.value}}" type="checkbox" ng-model="options.IsSelected" ng-change="countForSelectedDevices(options)">
+                                                <div class="control__indicator"></div>
+                                            </label>
+                                        </div>
+                                        <div class="clearboth"></div>
+                                    </li>
+                                    <li ng-if="!deviceListPag.length" class="centerAlign">No Devices found
+                                    </li>
+                                </ul>
+                            </div>
+                            <div ng-if="!showDeviceDatas" class="devicenodatafound">No Devices found for the selected Branch</div>
+                            <div class="ltdone"><a href class="btn" ng-click="selectedDevice();toggleDropLoadDevice();">Done</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-bg">
+                <div class="dialog">
+                    <div class="modal fade bs-example-modal-lg" focus-group-head="loop" focus-group-tail="loop" focus-stacktabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title modalHeaderStyle" id="myModalLabel">Equipment Details</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div ng-if="modalValueTrue">
+                                        <table>
+                                            <tr class="table-header">
+                                                <th class='modalTableHeader'>Device IC</th>
+                                                <th class='modalTableHeader'>SIM Active</th>
+                                                <th class='modalTableHeader'>SIM Profile</th>
+                                                <th class='modalTableHeader'>Device Type</th>
+                                                <th class='modalTableHeader'>Device Status</th>
+                                            </tr>
+                                            <tr style="border-bottom: 2px solid #f2f2f2;" ng-repeat="modalValue in modalValue">
+                                                <td class="modalTableData">{{modalValue.deviceId}}</td>
+                                                <td class="modalTableData">{{modalValue.simActive}}</td>
+                                                <td class="modalTableData">{{modalValue.simProfile}}</td>
+                                                <td class="modalTableData">{{modalValue.deviceType}}</td>
+                                                <td class="modalTableData" ng-if="modalValue.deviceStatus=='Reporting'" style="color:green;">{{modalValue.deviceStatus}}</td>
+                                                <td class="modalTableData" ng-if="modalValue.deviceStatus=='Not Reporting'" style="color:#EB0808;">{{modalValue.deviceStatus}}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div ng-if="modalValueSelect">
+                                        <h5>Please select Branch and Device</h5>
+                                    </div>
+                                    <div ng-if="modalValueCount">
+                                        <h5>No Data for the selected branch and Devices</h5>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div focus-highlight=""></div>
+        </div>
+
+        <div class="typeHeadCommand">
+            <p class="command">Command</p>
+            <input class="input-large commandButton" id="commandtxt" type="text" ng-change="enableSendButton(selected)" ng-model="selected" placeholder="Command" uib-typeahead="state for state in states | filter:$viewValue | limitTo:8" typeahead-editable="true" typeahead-on-select="onSelect($item, $model, $label, selected);">
+        </div>
+
+        <div ng-if="showLeftSndCmdPart" class="sendCmdBtnDivTrial">
+            <button ng-disabled="ActivateSend || ActivateSendDevice" type="reset" value="Reset" ng-click="sendCommand();" role="button" class="btn sendBtn sendCmdBtnTrial" data-toggle="modal"><img class="msgIconStyle" src="images/msgIcon.png"/>Send SMS</button>
+        </div>
+    </div>
+
+</div>
+<!--<div ng-if="showLeftSndCmdPart" class='sendBtnDiv'>
+        <button ng-disabled="ActivateSend" type="reset" value="Reset" ng-click="sendCommand(selected);selected=''" role="button" class="btn sendBtn" data-toggle="modal">Send</button>
+    </div>-->
+<!-- -->
+<!--|| ActivateSendDevice-->
+<div ng-if="showRightSndCmdPart" class="col-md-9 col-xs-9 col-sm-9 col-lg-9" ng-style="sndRightDiv">
+    <div style="height:2%;">
+        <p class="sendimagetm" ng-click="toggleSendCmdDiv()"><img alt="herc-logo" src="images/slidein-back-aro.png" align="left"></p>
+    </div>
+    <div class="row sendRightPart">
+        <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4" style="padding: 0px 0px 0px;">
+            <div ng-class="teleOutMsgStyle" ng-click="showOutMsg()" class="teleOutMsg">Outgoing Messages</div>
+        </div>
+        <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4">
+            <div ng-class="teleInMsgStyle" ng-click="showInMsg()" class="teleInMsg">Incoming Messages</div>
+        </div>
+        <div class="col-md-4 col-xs-4 col-sm-4 col-lg-4">
+            <div ng-class="lastMsgStyle" ng-click="lastGaspMsgs()" class="lastGaspMsg">Last Gasp Messages</div>
+        </div>
+    </div>
+
+    <div ng-if="showOutMessage" class="showOutMessageStyle scrollbar" ng-style="sendCmdStyle()" resize>
+        <table class="UMLTable" style="border-spacing: 10px;width: 100%;">
+            <tr class="table-header">
+                <th style="width: 35%;">Message</th>
+                <th>Phone Number</th>
+                <th>Sender</th>
+                <th>DateTime</th>
+            </tr>
+            <tr ng-repeat="lastMessageDatas in showOutMessageDatas track by $index">
+                <td title={{lastMessageDatas.message}}>{{lastMessageDatas.message}}</td>
+                <td>{{lastMessageDatas.phNumber}}</td>
+                <td>{{lastMessageDatas.sender}}</td>
+                <td title="{{lastMessageDatas.date | datetimestamp}}">{{lastMessageDatas.date | mydate}}</td>
+            </tr>
+
+        </table>
+    </div>
+    <div ng-if="showInMessage" class="scrollbar" ng-style="sendCmdStyle()" resize>
+        <table class="UMLTable" style="border-spacing: 10px;width: 100%;">
+            <tr>
+                <th style="width:65%;">Message</th>
+                <th>Phone Number</th>
+                <th>DateTime</th>
+            </tr>
+            <tr ng-repeat="lastMessageDatas in getIncMsgMessageDatas track by $index">
+                <td title={{lastMessageDatas.message}} style="word-wrap: break-word;">{{lastMessageDatas.message}}</td>
+                <td>{{lastMessageDatas.phNumber}}</td>
+                <td title="{{lastMessageDatas.date | datetimestamp}}">{{lastMessageDatas.date | mydate}}</td>
+            </tr>
+
+        </table>
+    </div>
+    <div ng-if="lastGpMsg" class="scrollbar" ng-style="sendCmdStyle()" resize>
+        <table class="UMLTable" style="border-spacing: 10px;width: 100%;">
+            <tr>
+                <th style="width:65%;">Message</th>
+                <th>Phone Number</th>
+                <th>DateTime</th>
+            </tr>
+            <tr ng-repeat="lastMessageDatas in lastMessageDatas track by $index">
+                <td title={{lastMessageDatas.message}} style="word-wrap: break-word;">{{lastMessageDatas.message}}</td>
+                <td>{{lastMessageDatas.phNumber}}</td>
+                <td title="{{lastMessageDatas.date | datetimestamp}}">{{lastMessageDatas.date | mydate}}</td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+
+<div ng-if="slideImageShow">
+    <div>
+        <p class="sendimagetm slideFront" ng-click="toggleSendCmdDivFront()"><img alt="herc-logo" src="images/slidein-front-aro.png" align="left"></p>
+    </div>
+</div>
